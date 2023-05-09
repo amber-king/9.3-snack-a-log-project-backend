@@ -4,6 +4,7 @@ const snacks = express.Router();
 const { getAllSnacks, oneSnack } = require("../queries/snacks.js");
 
 // GET All Snacks
+// /snacks
 snacks.get("/", async (req, res) => {
   const allSnacks = await getAllSnacks();
   if (allSnacks[0]) {
@@ -14,6 +15,7 @@ snacks.get("/", async (req, res) => {
 });
 
 // SHOW one snack
+// /snacks/:id
 snacks.get("/:id", async (req, res) => {
   const { id } = req.params;
   const snack = await oneSnack(id);
