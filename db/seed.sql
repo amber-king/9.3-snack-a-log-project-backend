@@ -5,7 +5,8 @@ INSERT INTO
         time_eaten,
         food_group,
         is_healthy,
-        calorie_count
+        calorie_count,
+        quantity
     )
 VALUES
     (
@@ -13,33 +14,38 @@ VALUES
         'Evening',
         'Grain',
         true,
-        '106'
+        '106',
+        'one bag'
     ),
     (
         'Chips',
         'Afternoon',
         'Snack',
         false,
-        '152'
+        '152',
+        'half bag'
     ),
     (
         'Avocados',
         'Afternoon',
         'Vegetable',
         true,
-        '240'
+        '240',
+        'half'
     ),
     (
         'Poptarts',
         'Evening',
         'Snack',
         false,
-        '200'
+        '200',
+        'two'
     ),
     (
         'Greek Yogurt',
         'Morning',
         'Dairy',
         true,
-        '100'
+        '100',
+        'one cup'
     );
