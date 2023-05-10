@@ -9,5 +9,6 @@ CREATE TABLE snacks (
     time_eaten TEXT,
     food_group TEXT,
     is_healthy BOOLEAN,
-    calorie_count INT
+    calorie_count INT,
+    quantity TEXT
 );
