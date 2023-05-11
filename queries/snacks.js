@@ -31,13 +31,14 @@ const getOneSnack = async (id) => {
 const createOneSanck = async (newSnack) => {
   try {
     const createdSnack = await db.one(
-      "INSERT INTO snacks(snack_name, time_eaten, food_group, is_healthy, calorie_count) VALUES ($1, $2, $3, $4, $5) RETURNING *;",
+      "INSERT INTO snacks(snack_name, time_eaten, food_group, is_healthy, calorie_count, quantity) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *;",
       [
         newSnack.snack_name,
         newSnack.time_eaten,
         newSnack.food_group,
         newSnack.is_healthy,
         newSnack.calorie_count,
+        newSnack.quantity,
       ]
     );
     return createdSnack;
@@ -51,13 +52,14 @@ const createOneSanck = async (newSnack) => {
 const updateOneSnack = async (id, newSnack) => {
   try {
     const updatedSnack = await db.one(
-      "UPDATE snacks SET snack_name=$1, time_eaten=$2, food_group=$3, is_healthy=$4, calorie_count=$5 WHERE snack_id=$6 RETURNING *;",
+      "UPDATE snacks SET snack_name=$1, time_eaten=$2, food_group=$3, is_healthy=$4, calorie_count=$5, quantity=$6 WHERE snack_id=$7 RETURNING *;",
       [
         newSnack.snack_name,
         newSnack.time_eaten,
         newSnack.food_group,
         newSnack.is_healthy,
         newSnack.calorie_count,
+        newSnack.quantity,
         id,
       ]
     );
