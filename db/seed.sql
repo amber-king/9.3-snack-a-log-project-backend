@@ -1,4 +1,5 @@
-\ c snacks_dev
+\c snacks_dev;
+
 INSERT INTO
     snacks(
         snack_name,
