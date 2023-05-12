@@ -59,7 +59,7 @@ snacks.put("/:id", async (req, res) => {
 // /snacks/:id
 snacks.delete("/:id", async (req, res) => {
   const { id } = req.params;
-  const deleted = await delteOneSnack(id, req.body);
+  const deleted = await delteOneSnack(id);
   if (deleted) {
     res.status(200).json(deleted);
   } else {

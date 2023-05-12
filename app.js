@@ -12,13 +12,13 @@ app.use(express.json());
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Welcome to Snack-a-log 🫒");
+  res.json("Welcome to Snack-a-log 🫒");
 });
 
 app.use("/snacks", snacksControllers);
 
 app.get("*", (req, res) => {
-  res.status(404).send("Page not found");
+  res.status(404).json("Page not found");
 });
 
 // Export
